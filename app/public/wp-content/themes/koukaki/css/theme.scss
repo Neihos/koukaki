@@ -2,6 +2,8 @@
 
 @import "oscar";
 
+// Animations des sections
+
 .banner {
   animation: fadeInDown 2s ease-in-out;
 }
@@ -10,4 +12,40 @@
 #studio,
 #colophon {
   animation: fadeInUp 2s ease-in-out;
+}
+
+// Animations des fleurs
+
+.story__article::after,
+.story h2::after,
+.site-footer ul::after,
+#studio h2::before,
+#studio h2::after,
+#oscar::after,
+#oscar::before {
+  animation: rotating 25s linear infinite;
+}
+
+.site-footer::before,
+.site-footer::after {
+  display: none;
+}
+
+//recentre les fleurs
+.story h2::after {
+  width: 155px;
+  height: 155px;
+  object-fit: cover;
+}
+
+#studio h2::after {
+  width: 109px;
+  height: 109px;
+  object-fit: cover;
+}
+
+#studio h2::before {
+  width: 203px;
+  height: 203px;
+  object-fit: cover;
 }

@@ -7,6 +7,8 @@
   }
  }
 
+ // Effet Fade in : up and down
+
 @keyframes fadeInDown {
   0% {
     transform: translateY(-30px);
@@ -25,4 +27,16 @@
     transform: translateY(0px);
   }
   @include opa
+}
+
+// Animations des fleurs : rotation
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
