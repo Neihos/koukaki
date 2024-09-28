@@ -1,0 +1,76 @@
+#oscar {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 12em auto 5em auto;
+  position: relative;
+  &::before {
+    content: url("../assets/images/Sunflower.png");
+    position: absolute;
+    left: 7em;
+    top: -4em;
+  }
+  &::after {
+    content: url("../assets/images/orchid.png");
+    position: absolute;
+    right: -5em;
+    top: -15em;
+  }
+
+  .oscarClass {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+      margin-top: 80px;
+    }
+
+    .textOscar {
+      background-image: url("../assets/images/nuage-orange.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 60%;
+      padding: 50px 0;
+      p {
+        font-family: "Quicksand", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 42px;
+        line-height: 52.5px;
+        color: #fff5e9;
+        text-align: left;
+        text-align: left;
+        padding: 0 100px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1164px) {
+  #oscar .oscarClass {
+    flex-direction: column;
+    align-items: center;
+    img {
+      margin-top: 20px;
+    }
+    .textOscar p {
+      font-size: 1.5rem;
+      padding: 30px;
+      line-height: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #oscar .oscarClass .textOscar {
+    width: 90%;
+  }
+  p {
+    padding: 0;
+  }
+}
