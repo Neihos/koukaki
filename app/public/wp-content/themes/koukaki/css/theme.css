@@ -1,0 +1,35 @@
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.banner {
+  animation: fadeInDown 2s ease-in-out;
+}
+
+#story, #studio, #colophon {
+  animation: fadeInUp 2s ease-in-out;
+}/*# sourceMappingURL=theme.css.map */

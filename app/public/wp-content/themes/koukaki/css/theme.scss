@@ -1,0 +1,9 @@
+@import "keyframes";
+
+.banner {
+    animation: fadeInDown 2s ease-in-out
+}
+
+#story, #studio, #colophon {
+    animation: fadeInUp 2s ease-in-out;
+}

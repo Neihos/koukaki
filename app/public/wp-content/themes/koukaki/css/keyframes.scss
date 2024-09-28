@@ -1,0 +1,28 @@
+ @mixin opa {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+ }
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+  @include opa
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+  @include opa
+}

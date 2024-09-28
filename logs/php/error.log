@@ -1,0 +1,2 @@
+[28-Sep-2024 16:35:00 UTC] PHP Warning:  filemtime(): stat failed for C:\Users\Neiho\Local Sites\koukaki\app\public/wp-content/themes/koukaki/css/theme.css in C:\Users\Neiho\Local Sites\koukaki\app\public\wp-content\themes\koukaki\functions.php on line 7
+[28-Sep-2024 16:35:01 UTC] PHP Warning:  filemtime(): stat failed for C:\Users\Neiho\Local Sites\koukaki\app\public/wp-content/themes/koukaki/css/theme.css in C:\Users\Neiho\Local Sites\koukaki\app\public\wp-content\themes\koukaki\functions.php on line 7
