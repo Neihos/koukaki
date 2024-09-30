@@ -110,10 +110,26 @@
   animation: fadeInDown 2s ease-in-out;
 }
 
-#story,
-#studio,
-#colophon {
+#story {
   animation: fadeInUp 2s ease-in-out;
+}
+
+#studio {
+  opacity: 0;
+  animation: fadeInUp 2s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+
+#oscar {
+  opacity: 0;
+  animation: fadeInUp 2s ease-in-out forwards;
+  animation-delay: 3s;
+}
+
+#colophon {
+  opacity: 0;
+  animation: fadeInUp 2s ease-in-out forwards;
+  animation-delay: 4.5s;
 }
 
 .story__article::after,

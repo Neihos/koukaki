@@ -1,13 +1,13 @@
- @mixin opa {
+@mixin opa {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
   }
- }
+}
 
- // Effet Fade in : up and down
+// Effet Fade in : up and down
 
 @keyframes fadeInDown {
   0% {
@@ -16,7 +16,7 @@
   100% {
     transform: translateY(0px);
   }
-  @include opa
+  @include opa;
 }
 
 @keyframes fadeInUp {
@@ -26,7 +26,13 @@
   100% {
     transform: translateY(0px);
   }
-  @include opa
+  @include opa;
+}
+
+@mixin fadeInUpDelay($delay) {
+  opacity: 0;
+  animation: fadeInUp 2s ease-in-out forwards;
+  animation-delay: $delay;
 }
 
 // Animations des fleurs : rotation

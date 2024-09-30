@@ -8,10 +8,20 @@
   animation: fadeInDown 2s ease-in-out;
 }
 
-#story,
-#studio,
-#colophon {
+#story {
   animation: fadeInUp 2s ease-in-out;
+}
+
+#studio {
+  @include fadeInUpDelay(1.5s)
+}
+
+#oscar {
+  @include fadeInUpDelay(3s)
+}
+
+#colophon {
+  @include fadeInUpDelay(4.5s)
 }
 
 // Animations des fleurs
