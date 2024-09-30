@@ -5,8 +5,13 @@ get_header();
 
     <main id="primary" class="site-main">
         <section class="banner">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+            <video width="1440px" height="806px" preload="auto" loop class="videocats" autoplay muted>
+                <source type="video/mp4" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/video/studio-koukaki.mp4"> 
+                Votre navigateur ne supporte pas la vidéo MP4 
+            </video>
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
         </section>
+
         <section id="story" class="story">
             <h2>L'histoire</h2>
             <article id="" class="story__article">
@@ -67,7 +72,7 @@ get_header();
             </section>
 
             <?php get_template_part( 'template-parts/oscar' ); ?>
-            
+
     </main><!-- #main -->
 
 <?php

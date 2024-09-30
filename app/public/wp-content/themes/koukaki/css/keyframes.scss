@@ -46,3 +46,43 @@
     transform: rotate(360deg);
   }
 }
+
+// Animation du titre du site
+
+// Animation titre sur la vidéo
+
+@keyframes pulse {
+  0% {
+    transform: translate(-60%, -50%) scale(1.08, 0.92);
+  }
+  10% {
+    transform: translate(-80%, -60%) scale(0.92, 1.08);
+  }
+  20% {
+    transform: translate(-60%, -50%) scale(1.08, 0.92); 
+  }
+  30% {
+    transform: translate(-40%, -40%) scale(0.92, 1.08);
+  }
+  40% {
+    transform: translate(-60%, -50%) scale(1.08, 0.92);
+  }
+  50% {
+    transform: translate(-40%, -60%) scale(0.92, 1.08);
+  }
+  60% {
+    transform: translate(-60%, -50%) scale(1.08, 0.92);
+  }
+  70% {
+    transform: translate(-80%, -40%) scale(0.92, 1.08);
+  }
+  80% {
+    transform: translate(-60%, -50%) scale(1.08, 0.92);
+  }
+  90% {
+    transform: translate(-60%, -50%) scale(1.20, 1.20);
+  }
+  100% {
+    transform: translate(-60%, -50%) scale(1.08, 0.92);
+  }
+}

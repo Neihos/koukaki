@@ -5,7 +5,28 @@
 // Animations des sections
 
 .banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
   animation: fadeInDown 2s ease-in-out;
+  .videocats {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  img {
+    position: absolute;
+    top: 60%;
+    left: 55%;
+    transform: translate(-60%, -50%) scale(1);
+    z-index: 2;
+    animation: pulse 8s infinite ease-in-out;
+  }
 }
 
 #story {
@@ -13,15 +34,15 @@
 }
 
 #studio {
-  @include fadeInUpDelay(1.5s)
+  @include fadeInUpDelay(1.5s);
 }
 
 #oscar {
-  @include fadeInUpDelay(3s)
+  @include fadeInUpDelay(3s);
 }
 
 #colophon {
-  @include fadeInUpDelay(4.5s)
+  @include fadeInUpDelay(4.5s);
 }
 
 // Animations des fleurs
@@ -58,4 +79,16 @@
   width: 203px;
   height: 203px;
   object-fit: cover;
+}
+
+@media(max-width: 1440px){
+  .site-main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .videocats {
+    display: none;
+  }
 }
