@@ -1,0 +1,58 @@
+/* animation du carrousel de personnages */
+.main-character {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+  align-items: flex-start;
+}
+
+figcaption {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide img {
+  display: block;
+  overflow: hidden;
+  min-width: 300px;
+  height: 440px;
+  transition: transform 0.4s ease;
+}
+.swiper-slide:hover img {
+  transform: scale(1.05);
+}
+
+.swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 1439px) {
+  .main-character h3 {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 512px) {
+  .swiper-slide img {
+    max-height: 300px;
+  }
+}/*# sourceMappingURL=carrousel.css.map */

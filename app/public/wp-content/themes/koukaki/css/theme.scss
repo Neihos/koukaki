@@ -2,6 +2,8 @@
 
 @import "oscar";
 
+@import "carrousel";
+
 // Animations des sections
 
 .banner {
@@ -81,14 +83,24 @@
   object-fit: cover;
 }
 
-@media(max-width: 1440px){
+@media (max-width: 1440px) {
   .site-main {
     width: 100%;
+  }
+  .site {
+    overflow: hidden;
   }
 }
 
 @media (max-width: 767px) {
   .videocats {
+    display: none;
+  }
+}
+
+@media (max-width: 920px) {
+  #oscar::after,
+  #oscar::before {
     display: none;
   }
 }
