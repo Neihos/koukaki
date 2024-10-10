@@ -1,32 +1,26 @@
-/******* Animations des nuages **********/
-
 function nuages_mouvements() {
   const containerPlace = document.querySelector(".story #place");
 
   // Création et ajout des nuages
   const grosNuage = document.createElement("img");
-  grosNuage.src = "../assets/images/big_cloud.png";
   grosNuage.className = "gros_nuage";
   containerPlace.appendChild(grosNuage);
 
   const petitNuage = document.createElement("img");
-  petitNuage.src = "../assets/images/little_cloud.png";
   petitNuage.className = "petit_nuage";
   containerPlace.appendChild(petitNuage);
 
-  // Configuration de l'Intersection Observer pour détecter la visibilité de la section
+  // Intersection Observer pour l'animation
   const observerOptions = {
     root: null,
-    threshold: Array.from({ length: 81 }, (_, i) => i / 100), // Seuils de 0% à 100%
+    threshold: Array.from({ length: 81 }, (_, i) => i / 100),
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.intersectionRatio > 0.2) {
-        // La section est visible à partir de 20%
         window.addEventListener("scroll", handleScroll);
       } else {
-        // Section plus visible, on stoppe l'animation
         window.removeEventListener("scroll", handleScroll);
         resetNuagesPosition();
       }
@@ -41,7 +35,6 @@ function nuages_mouvements() {
       containerPlace.getBoundingClientRect().top + window.scrollY;
     const sectionHeight = containerPlace.offsetHeight;
 
-    // Calcul du pourcentage de la section visible dans la fenêtre
     const scrollTop = window.scrollY;
     const sectionVisibleHeight = Math.min(
       Math.max(scrollTop + windowHeight - sectionTop, 0),
@@ -50,10 +43,9 @@ function nuages_mouvements() {
 
     const visibilityProgress = sectionVisibleHeight / sectionHeight;
 
-    // Déplacer les nuages selon la progression
-    const maxTranslation = 700; // 700px de déplacement maximal
-    const grosNuageTranslation = -maxTranslation * visibilityProgress; // Déplacement linéaire complet sur 100%
-    const petitNuageTranslation = -maxTranslation * 0.5 * visibilityProgress; // Déplacement à moitié pour le petit nuage
+    const maxTranslation = 700;
+    const grosNuageTranslation = -maxTranslation * visibilityProgress;
+    const petitNuageTranslation = -maxTranslation * 0.5 * visibilityProgress;
 
     grosNuage.style.transform = `translateX(${grosNuageTranslation}px)`;
     petitNuage.style.transform = `translateX(${petitNuageTranslation}px)`;
@@ -66,3 +58,17 @@ function nuages_mouvements() {
 }
 
 nuages_mouvements();
+
+/*******Animation du buger menu*******/
+
+const burgerMenuButton = document.querySelector(".burgerMenu");
+const burgerMenuButtonIcon = document.querySelector(".burgerMenu i");
+const burgerMenu = document.querySelector(".burger-menu");
+
+burgerMenuButton.onclick = function () {
+  burgerMenu.classList.toggle("open");
+  const isOpen = burgerMenu.classList.contains("open");
+  burgerMenuButtonIcon.classList = isOpen
+    ? "fa-solid fa-xmark"
+    : "fa-solid fa-bars";
+};

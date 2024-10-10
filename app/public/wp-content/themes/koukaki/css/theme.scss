@@ -4,6 +4,8 @@
 
 @import "carrousel";
 
+@import "menu";
+
 // Animations des sections
 
 .banner {
@@ -53,6 +55,11 @@
 .site-footer ul::after,
 #studio h2::before,
 #studio h2::after,
+.orchid-menu,
+.sunflower-menu,
+.flower-menu,
+.hibiscus-menu,
+.randomflower-menu,
 #oscar::after,
 #oscar::before {
   animation: rotating 25s linear infinite;
@@ -124,6 +131,9 @@
   .main-character h3 {
     margin: 0 auto;
   }
+  .banner {    
+  min-height: calc(100vw * 0.559);
+  }
 }
 
 @media (max-width: 767px) {
@@ -135,6 +145,202 @@
 @media (max-width: 920px) {
   #oscar::after,
   #oscar::before {
+    display: none;
+  }
+}
+
+// Burger Menu
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  a {
+    text-decoration: none;
+    margin-bottom: 15px;
+  }
+}
+
+.navMenu {
+  display: flex;
+  background-color: #ffd5a2;
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+  padding-left: 100px;
+  a {
+    font-family: "Quicksand", Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    text-decoration: none;
+  }
+}
+
+.burgerMenu {
+  cursor: pointer;
+  i {
+    font-size: xx-large;
+    margin-right: 80px;
+  }
+}
+
+.burger-menu {
+  display: none;
+  height: 0vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    gap: 3vh;
+  }
+  li {
+    list-style: none;
+    text-align: center;
+    a {
+      text-decoration: none;
+      font-size: 4.6em;
+      font-family: "Roboto Mono", monospace;
+      font-weight: 400;
+    }
+    a:hover {
+      text-shadow: 0px 0px 14px rgba(255, 92, 0, 1);
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+}
+
+.burger-menu.open {
+  display: flex;
+  height: calc(100vh - 80px);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.orchid-menu {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  top: 80px;
+  left: -60px;
+}
+
+.sunflower-menu {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 216px;
+  height: 216px;
+  top: 60px;
+  right: 160px;
+}
+
+.flower-menu {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  transform-origin: center center;
+  top: 50%;
+  left: 210px;
+}
+
+.hibiscus-menu {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  transform-origin: center center;
+  bottom: -325px;
+  right: -295px;
+}
+
+.randomflower-menu {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  transform-origin: center center;
+  top: 350px;
+  right: -30px;
+}
+
+.orenjiiro-menu {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 105px;
+  height: 105px;
+  transform-origin: center center;
+  bottom: 70px;
+  left: 100px;
+  animation: mouvement_orenjiiro 2s 0.8s ease-in-out alternate infinite;
+}
+
+.kawaneko-menu {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  transform-origin: center center;
+  top: 140px;
+  left: 250px;
+  animation: mouvement_kawaneko 2s 0.8s ease-in-out alternate infinite;
+}
+
+.jaakuna-menu {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  transform-origin: center center;
+  top: 420px;
+  right: 200px;
+  animation: mouvement_jaakuna 2s 0.8s ease-in-out alternate infinite;
+}
+
+.logo-menu {
+  position: relative;
+  width: 154px;
+  height: 95px;
+  margin: 40px auto 0 auto;
+  filter: drop-shadow(0px 0px 10px #ff5c0099);
+  animation: pulse2 2.2s ease-in-out alternate infinite;
+}
+
+@media (max-width:1350px){
+  .burger-menu ul {
+    gap:1vh;
+  }
+  .burger-menu ul li a {
+    font-size: 2em;
+  }
+}
+
+@media (max-width:920px){
+  .decor img {
     display: none;
   }
 }
