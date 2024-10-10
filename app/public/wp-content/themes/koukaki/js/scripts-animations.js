@@ -64,11 +64,26 @@ nuages_mouvements();
 const burgerMenuButton = document.querySelector(".burgerMenu");
 const burgerMenuButtonIcon = document.querySelector(".burgerMenu i");
 const burgerMenu = document.querySelector(".burger-menu");
+const menuLinks = document.querySelectorAll(".burger-menu a"); // Sélectionner les liens du menu
 
 burgerMenuButton.onclick = function () {
   burgerMenu.classList.toggle("open");
   const isOpen = burgerMenu.classList.contains("open");
+
+  // Changer l'icône du bouton
   burgerMenuButtonIcon.classList = isOpen
     ? "fa-solid fa-xmark"
     : "fa-solid fa-bars";
+
+  // Désactiver ou réactiver le scroll en fonction de l'état du menu
+  document.body.style.overflow = isOpen ? "hidden" : "auto";
 };
+
+// Fermer le menu lorsqu'on clique sur un lien et réactiver le scroll
+menuLinks.forEach((link) => {
+  link.onclick = function () {
+    burgerMenu.classList.remove("open");
+    burgerMenuButtonIcon.classList = "fa-solid fa-bars"; // Remettre l'icône du burger
+    document.body.style.overflow = "auto"; // Réactiver le scroll
+  };
+});

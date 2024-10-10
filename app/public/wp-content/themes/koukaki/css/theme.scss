@@ -343,4 +343,19 @@
   .decor img {
     display: none;
   }
+  .burgerMenu {
+  cursor: pointer;
+  i {
+    margin-right: 10px;
+  }
+}
+.site-title {
+  padding-left: 0px;
+}
+}
+
+@media (max-width:420px){
+  .site-title a {
+    font-size: 16px;
+  }
 }
