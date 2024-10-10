@@ -9,7 +9,7 @@ get_header();
                 <source type="video/mp4" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/video/studio-koukaki.mp4"> 
                 Votre navigateur ne supporte pas la vidéo MP4 
             </video>
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
+            <img data-0="bottom: 0% ; scale:1; left:55%;" data-400="bottom: -25%; scale:0.5; left:40%;" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
         </section>
 
         <section id="story" class="story">
@@ -41,6 +41,11 @@ get_header();
             <?php get_template_part( 'template-parts/oscar' ); ?>
 
     </main><!-- #main -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script>
+        var s = skrollr.init()
+    </script>
 
 <?php
 get_footer();

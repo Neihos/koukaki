@@ -23,7 +23,6 @@
   }
   img {
     position: absolute;
-    top: 60%;
     left: 55%;
     transform: translate(-60%, -50%) scale(1);
     z-index: 2;
@@ -83,12 +82,47 @@
   object-fit: cover;
 }
 
+// Animation de la section Lieu
+.story #place {
+  background-image: url("../assets/images/Studio_Koukaki-image_place.png");
+  height: 699px;
+  position: relative;
+
+  .petit_nuage,
+  .gros_nuage {
+    position: absolute;
+    filter: blur(13px);
+    transition: transform 0.5s ease-out; // Transition douce
+  }
+
+  .petit_nuage {
+    left: 55rem; // Position initiale
+    top: 20rem;
+    content: url("../assets/images/little_cloud.png"); // Adresse de l'image
+  }
+
+  .gros_nuage {
+    right: 7rem; // Position initiale
+    top: 5rem;
+    content: url("../assets/images/big_cloud.png"); // Adresse de l'image
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
+
+
 @media (max-width: 1440px) {
   .site-main {
     width: 100%;
   }
   .site {
     overflow: hidden;
+  }
+  .main-character h3 {
+    margin: 0 auto;
   }
 }
 
