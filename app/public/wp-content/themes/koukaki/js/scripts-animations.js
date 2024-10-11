@@ -87,3 +87,49 @@ menuLinks.forEach((link) => {
     document.body.style.overflow = "auto"; // Réactiver le scroll
   };
 });
+
+/* Apparitions des titres h2*/
+
+document.addEventListener("DOMContentLoaded", function () {
+  const h2Elements = document.querySelectorAll("h2");
+
+  const observerOptions = {
+    root: null,
+    threshold: 0.1, // 10% du h2 visible
+    rootMargin: "0px 0px -10% 0px", // On ajoute une marge pour éviter une détection trop rapide
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const h2 = entry.target;
+        h2.classList.add("animated"); // Ajouter la classe "animated" au h2
+        splitWordsAndAnimate(h2);
+        observer.unobserve(h2); // On stoppe l'observation une fois l'animation déclenchée
+      }
+    });
+  }, observerOptions);
+
+  h2Elements.forEach((h2) => {
+    observer.observe(h2);
+  });
+});
+
+function splitWordsAndAnimate(h2) {
+  const words = h2.innerText.split(" ");
+  h2.innerHTML = ""; // On vide le h2
+
+  words.forEach((word, index) => {
+    const span = document.createElement("span");
+    span.innerText = word;
+    span.style.opacity = 0; // Initialement caché
+    span.style.display = "inline-block";
+
+    // Si c'est le premier mot, on ajoute un délai de 1s
+    const delay = index === 0 ? 1 : 1 + index * 1; // 1s pour le premier mot, puis 1s pour les autres
+
+    span.style.animation = `fadeInUp 0.5s ease forwards ${delay}s`; // Appliquer le délai
+    h2.appendChild(span);
+    h2.appendChild(document.createTextNode(" ")); // Espace entre les mots
+  });
+}
