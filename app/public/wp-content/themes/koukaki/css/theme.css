@@ -191,10 +191,13 @@
   }
 }
 @media (max-width: 768px) {
+  #oscar {
+    margin: 2em auto 2em auto;
+  }
   #oscar .oscarClass .textOscar {
     width: 90%;
   }
-  p {
+  #oscar p {
     padding: 0;
   }
 }
@@ -547,7 +550,9 @@ figcaption {
 
 .story #place {
   background-image: url("../assets/images/Studio_Koukaki-image_place.png");
-  height: 699px;
+  background-size: 100%;
+  aspect-ratio: 1440/699;
+  min-height: auto;
   position: relative;
 }
 .story #place .petit_nuage,
@@ -569,6 +574,10 @@ figcaption {
 .story #place p {
   font-size: 15px;
   font-weight: 400;
+}
+.story #place h3,
+.story #place p {
+  z-index: 2;
 }
 
 h2 {
@@ -603,14 +612,29 @@ h2.animated span {
     min-height: 55.9vw;
   }
 }
-@media (max-width: 767px) {
-  .videocats {
-    display: none;
-  }
-}
 @media (max-width: 920px) {
   #oscar::after,
   #oscar::before {
     display: none;
+  }
+}
+@media (max-width: 767px) {
+  .videocats {
+    display: none;
+  }
+  .story #place {
+    background-size: cover;
+  }
+  .story #place .petit_nuage,
+  .story #place .gros_nuage {
+    display: none;
+  }
+  .story #place p {
+    font-size: 1em;
+  }
+}
+@media (max-width: 700px) {
+  h2 {
+    font-size: 2rem;
   }
 }/*# sourceMappingURL=theme.css.map */

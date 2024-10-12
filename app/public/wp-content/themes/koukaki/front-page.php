@@ -23,6 +23,8 @@ get_header();
             <article id="place">
                 <div>
                     <h3>Le Lieu</h3>
+                    <img class="petit_nuage" alt="petit nuage" data-1700="transform:translateX(0px);" data-2300="transform:translateX(-380px);">
+                    <img class="gros_nuage" alt="gros nuage" data-1700="transform:translateX(0px);" data-2300="transform:translateX(-680px);">
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
 
@@ -42,10 +44,6 @@ get_header();
 
     </main><!-- #main -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
-    <script>
-        var s = skrollr.init()
-    </script>
 
 <?php
 get_footer();

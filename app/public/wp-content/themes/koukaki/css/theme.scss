@@ -92,7 +92,9 @@
 // Animation de la section Lieu
 .story #place {
   background-image: url("../assets/images/Studio_Koukaki-image_place.png");
-  height: 699px;
+  background-size: 100%;
+  aspect-ratio: 1440 / 699;
+  min-height: auto;
   position: relative;
 
   .petit_nuage,
@@ -117,6 +119,11 @@
   p {
     font-size: 15px;
     font-weight: 400;
+  }
+
+  h3,
+  p {
+    z-index: 2;
   }
 }
 
@@ -150,14 +157,8 @@ h2.animated span {
   .main-character h3 {
     margin: 0 auto;
   }
-  .banner {    
-  min-height: calc(100vw * 0.559);
-  }
-}
-
-@media (max-width: 767px) {
-  .videocats {
-    display: none;
+  .banner {
+    min-height: calc(100vw * 0.559);
   }
 }
 
@@ -165,5 +166,27 @@ h2.animated span {
   #oscar::after,
   #oscar::before {
     display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .videocats {
+    display: none;
+  }
+  .story #place {
+    background-size: cover;
+    .petit_nuage,
+    .gros_nuage {
+      display: none;
+    }
+    p {
+      font-size: 1em;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  h2 {
+    font-size: 2rem;
   }
 }

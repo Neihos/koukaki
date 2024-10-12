@@ -1,20 +1,30 @@
 <?php
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
-add_action('wp_enqueue_scripts', 'koukaki_enqueue_script');
+add_action('wp_enqueue_scripts', 'koukaki_enqueue_scripts');
 
 function theme_enqueue_styles() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.css', array(), filemtime(get_stylesheet_directory() . '/css/theme.css'));
 }
 
-// Déclarer un fichier JS
-function koukaki_enqueue_script() {
+// Déclarer les fichiers JS
+function koukaki_enqueue_scripts() {
+    // Inclure Skrollr
+    wp_enqueue_script( 
+        'skrollr', 
+        'https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js', 
+        array(), // Pas de dépendances
+        '0.6.30', // Version de Skrollr
+        true // Charger dans le footer
+    );
+
+    // Inclure le script d'animations
     wp_enqueue_script( 
         'koukaki-oscar', 
         get_stylesheet_directory_uri() . '/js/scripts-animations.js', 
-        array( 'jquery' ), 
+        array( 'jquery', 'skrollr' ), // Dépend de jQuery et Skrollr
         '1.0', 
-        true 
+        true // Charger dans le footer
     );
 }
 

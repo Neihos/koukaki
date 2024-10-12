@@ -67,10 +67,13 @@
 }
 
 @media (max-width: 768px) {
-  #oscar .oscarClass .textOscar {
-    width: 90%;
-  }
-  p {
-    padding: 0;
+  #oscar {
+    margin: 2em auto 2em auto;
+    .oscarClass .textOscar {
+      width: 90%;
+    }
+    p {
+      padding: 0;
+    }
   }
 }

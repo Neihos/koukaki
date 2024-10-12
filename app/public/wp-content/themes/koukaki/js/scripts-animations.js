@@ -1,94 +1,14 @@
-function nuages_mouvements() {
-  const containerPlace = document.querySelector(".story #place");
+/******* Chargement de la bibliothéque Skrollr *******/
 
-  // Création et ajout des nuages
-  const grosNuage = document.createElement("img");
-  grosNuage.className = "gros_nuage";
-  containerPlace.appendChild(grosNuage);
-
-  const petitNuage = document.createElement("img");
-  petitNuage.className = "petit_nuage";
-  containerPlace.appendChild(petitNuage);
-
-  // Intersection Observer pour l'animation
-  const observerOptions = {
-    root: null,
-    threshold: Array.from({ length: 81 }, (_, i) => i / 100),
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.intersectionRatio > 0.2) {
-        window.addEventListener("scroll", handleScroll);
-      } else {
-        window.removeEventListener("scroll", handleScroll);
-        resetNuagesPosition();
-      }
-    });
-  }, observerOptions);
-
-  observer.observe(containerPlace);
-
-  function handleScroll() {
-    const windowHeight = window.innerHeight;
-    const sectionTop =
-      containerPlace.getBoundingClientRect().top + window.scrollY;
-    const sectionHeight = containerPlace.offsetHeight;
-
-    const scrollTop = window.scrollY;
-    const sectionVisibleHeight = Math.min(
-      Math.max(scrollTop + windowHeight - sectionTop, 0),
-      sectionHeight
-    );
-
-    const visibilityProgress = sectionVisibleHeight / sectionHeight;
-
-    const maxTranslation = 700;
-    const grosNuageTranslation = -maxTranslation * visibilityProgress;
-    const petitNuageTranslation = -maxTranslation * 0.5 * visibilityProgress;
-
-    grosNuage.style.transform = `translateX(${grosNuageTranslation}px)`;
-    petitNuage.style.transform = `translateX(${petitNuageTranslation}px)`;
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof skrollr !== "undefined") {
+    var s = skrollr.init();
+  } else {
+    console.error("Skrollr n'est pas chargé.");
   }
-
-  function resetNuagesPosition() {
-    grosNuage.style.transform = "translateX(0)";
-    petitNuage.style.transform = "translateX(0)";
-  }
-}
-
-nuages_mouvements();
-
-/*******Animation du buger menu*******/
-
-const burgerMenuButton = document.querySelector(".burgerMenu");
-const burgerMenuButtonIcon = document.querySelector(".burgerMenu i");
-const burgerMenu = document.querySelector(".burger-menu");
-const menuLinks = document.querySelectorAll(".burger-menu a"); // Sélectionner les liens du menu
-
-burgerMenuButton.onclick = function () {
-  burgerMenu.classList.toggle("open");
-  const isOpen = burgerMenu.classList.contains("open");
-
-  // Changer l'icône du bouton
-  burgerMenuButtonIcon.classList = isOpen
-    ? "fa-solid fa-xmark"
-    : "fa-solid fa-bars";
-
-  // Désactiver ou réactiver le scroll en fonction de l'état du menu
-  document.body.style.overflow = isOpen ? "hidden" : "auto";
-};
-
-// Fermer le menu lorsqu'on clique sur un lien et réactiver le scroll
-menuLinks.forEach((link) => {
-  link.onclick = function () {
-    burgerMenu.classList.remove("open");
-    burgerMenuButtonIcon.classList = "fa-solid fa-bars"; // Remettre l'icône du burger
-    document.body.style.overflow = "auto"; // Réactiver le scroll
-  };
 });
 
-/* Apparitions des titres h2*/
+/******* Apparitions des titres h2 ******/
 
 document.addEventListener("DOMContentLoaded", function () {
   const h2Elements = document.querySelectorAll("h2");
@@ -133,3 +53,35 @@ function splitWordsAndAnimate(h2) {
     h2.appendChild(document.createTextNode(" ")); // Espace entre les mots
   });
 }
+
+/******* Animation du buger menu *******/
+
+jQuery(document).ready(function ($) {
+  // Sélectionne le bouton du menu burger et son icône, le menu burger lui-même et tous les liens
+  const $burgerMenuButton = $(".burgerMenu");
+  const $burgerMenuButtonIcon = $(".burgerMenu i");
+  const $burgerMenu = $(".burger-menu");
+  const $menuLinks = $(".burger-menu a");
+
+  // Ajoute un événement de clic sur le bouton du menu burger
+  $burgerMenuButton.on("click", function () {
+    $burgerMenu.toggleClass("open"); // Vérifie si le menu burger est ouvert
+    const isOpen = $burgerMenu.hasClass("open");
+
+    // Change l'icône du bouton en fonction de l'état du menu
+    $burgerMenuButtonIcon.attr(
+      "class",
+      isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars"
+    );
+    // Désactive le défilement du corps de la page si le menu est ouvert
+    $("body").css("overflow", isOpen ? "hidden" : "auto");
+  });
+
+  // Ajoute un événement de clic sur les liens du menu burger
+  $menuLinks.on("click", function () {
+    $burgerMenu.removeClass("open"); // Ferme le menu burger en retirant la classe "open"
+    $burgerMenuButtonIcon.attr("class", "fa-solid fa-bars");
+    // Réactive le défilement du corps de la page
+    $("body").css("overflow", "auto");
+  });
+});

@@ -1,3 +1,5 @@
+// Gérer l'opacité
+
 @mixin opa {
   from {
     opacity: 0;
@@ -85,7 +87,7 @@
   }
 }
 
-// le menu
+// Animations du menu
 
 @keyframes pulse2 {
   0% {
