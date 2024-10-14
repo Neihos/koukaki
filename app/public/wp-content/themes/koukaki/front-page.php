@@ -5,7 +5,7 @@ get_header();
 
     <main id="primary" class="site-main">
         <section class="banner">
-            <video width="1440px" height="806px" preload="auto" loop class="videocats" autoplay muted>
+            <video width="1440px" height="806px" preload="auto" loop class="videocats" autoplay muted poster="<?php echo get_template_directory_uri(); ?>/assets/images/banner.png">
                 <source type="video/mp4" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/video/studio-koukaki.mp4"> 
                 Votre navigateur ne supporte pas la vidéo MP4 
             </video>
