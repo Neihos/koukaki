@@ -89,7 +89,7 @@ jQuery(document).ready(function ($) {
 // Carrousel
 
 document.addEventListener("DOMContentLoaded", function () {
-  var swiper = new Swiper(".mySwiper", {
+  new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
@@ -107,3 +107,4 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 });
+
