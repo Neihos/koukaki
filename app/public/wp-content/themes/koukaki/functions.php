@@ -7,7 +7,7 @@ function theme_enqueue_styles() {
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.css', array(), filemtime(get_stylesheet_directory() . '/css/theme.css'));
 }
 
-// Déclarer les fichiers JS
+// Déclarer les fichiers JS et CSS
 function koukaki_enqueue_scripts() {
     // Inclure Skrollr
     wp_enqueue_script( 
@@ -26,6 +26,25 @@ function koukaki_enqueue_scripts() {
         '1.0', 
         true // Charger dans le footer
     );
+
+    // Inclure Swiper avant scripts-animations.js
+wp_enqueue_script(
+    'swiper', 
+    'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', 
+    array(), // Pas de dépendances
+    '11.0.0', // Version de Swiper
+    true // Charger dans le footer
+);
+
+// Inclure le script d'animations qui dépend de Swiper
+wp_enqueue_script( 
+    'koukaki-oscar', 
+    get_stylesheet_directory_uri() . '/js/scripts-animations.js', 
+    array( 'jquery', 'swiper' ), // Dépend de jQuery et Swiper
+    '1.0', 
+    true // Charger dans le footer
+);
+
 }
 
 // Get customizer options form parent theme
